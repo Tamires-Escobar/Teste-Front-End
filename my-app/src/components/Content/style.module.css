@@ -9,7 +9,11 @@
   max-width: 1248px;
   padding: 0px 40px;
 }
-
+.content__img:hover{
+  transform: scale(1.1);
+  border: solid 1px red;
+  border-bottom: hidden;
+}
 .content__div {
   text-align: center;
 }
@@ -46,6 +50,7 @@
 .content__div__info:hover {
   height: 170px;
   background-color: #e6e8ea;
+  cursor: pointer;
 }
 
 .content__div__title {
