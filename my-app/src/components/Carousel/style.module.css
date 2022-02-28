@@ -1,0 +1,52 @@
+.container {
+  grid-area: carousel;
+}
+
+.container__div__img {
+  padding: 70px;
+  background-image: url(../assets/img/Banner.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+.img {
+  width: 100%;
+}
+
+.container__secondary {
+  max-width: 1248px;
+  margin: 0 auto;
+}
+.container__secondary div {
+  color: white;
+  max-width: 430px;
+}
+
+.paragraphOne {
+  margin: 0 0 15px 0;
+  font-weight: 700;
+  font-size: 30px;
+}
+
+.paragraphTwo {
+  font-weight: 900;
+  font-size: 45px;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .container__div__img {
+    padding: 45px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+      url(../assets/img/BannerTwo.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
+}
+
+@media (max-width: 420px) {
+  .paragraphTwo {
+    font-size: 30px;
+  }
+}

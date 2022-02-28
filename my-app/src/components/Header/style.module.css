@@ -1,0 +1,157 @@
+.container {
+  grid-area: header;
+  padding: 20px;
+  background-color: white;
+}
+.container__secondary {
+  max-width: 1248px;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.containerInput {
+  max-width: 721px;
+  width: 100%;
+  position: relative;
+}
+.inputWrapper {
+  padding-bottom: 5px;
+  color: #7a7a7a;
+  max-width: 721px;
+  width: 100%;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  outline: none;
+}
+
+.icon {
+  position: absolute;
+  left: 97%;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.user {
+  display: flex;
+}
+.user__div {
+  display: flex;
+  align-items: center;
+  margin-right: 30px;
+}
+
+.user__div p {
+  color: #7a7a7a;
+  font-size: 13px;
+  margin-left: 5px;
+}
+.user__div__secondary {
+  display: flex;
+  align-items: center;
+}
+
+.user__div__secondary span:last-child {
+  width: 14px;
+  margin: 5px;
+  height: 14px;
+  font-size: 9px;
+  border-radius: 7px;
+  color: white;
+  border: 1px solid #f8475f;
+  background-color: #f8475f;
+
+  display: flex;
+  align-items: end;
+  justify-content: center;
+}
+
+@media (max-width: 1110px) {
+  .container__secondary {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .inputWrapper {
+    margin-top: 15px;
+  }
+
+  .icon {
+    left: 97%;
+    top: 45%;
+  }
+}
+
+@media (max-width: 420px) {
+  .icon {
+    left: 94%;
+  }
+}
+
+@media (max-width: 768px) {
+  .user {
+    position: absolute;
+    top: 35px;
+    right: 35px;
+  }
+
+  .user__div {
+    display: none;
+  }
+
+  .user__div__secondary span {
+    font-size: 2rem;
+  }
+  .user__div__secondary span:last-child {
+    width: 20px;
+    margin: 0 0 5px 5px;
+    height: 20px;
+    font-size: 12px;
+    border-radius: 10px;
+    color: white;
+  }
+
+  .div__mobile {
+    display: flex;
+    align-items: self-end;
+  }
+  .spanH {
+    display: inline-block;
+    cursor: pointer;
+    border-top: 5px solid;
+    width: 30px;
+    margin-right: 1rem;
+  }
+
+  .spanH::after,
+  .spanH::before {
+    content: "";
+    display: block;
+    width: 30px;
+    background: currentColor;
+    margin-top: 5px;
+    transition: 0.3s;
+    position: relative;
+    border-top: 5px solid;
+  }
+
+  .active {
+    border-top-color: transparent;
+  }
+  .active:before {
+    transform: rotate(135deg);
+  }
+  .active:after {
+    transform: rotate(-135deg);
+    top: -7px;
+  }
+}
+
+@media (max-width: 425px) {
+  .user {
+    display: none;
+  }
+}

@@ -1,0 +1,108 @@
+.footer {
+  grid-area: footer;
+  color: white;
+  background-color: black;
+  border-bottom: 5px solid #c0c0c0;
+}
+
+/* container footer */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+
+  max-width: 1248px;
+  margin: 0 auto;
+}
+
+/* container primeira div */
+.container__one {
+  width: 275px;
+}
+
+/* linha da localização */
+.container__bar {
+  width: 44px;
+  height: 0px;
+  left: 380px;
+  bottom: 149px;
+  border: 4px solid #ffffff;
+}
+
+/* p da localização */
+.container__one p {
+  line-height: 25px;
+}
+
+/* container dos botões */
+.container__two {
+  width: 195px;
+}
+
+/* button contato */
+.container__two__div {
+  color: black;
+  position: relative;
+  margin: 10px;
+  font-size: 13px;
+  border-radius: 5px;
+
+  text-align: center;
+  background-color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+}
+
+/* icon mail */
+.container__two__span {
+  margin-right: 10px;
+  font-size: 15px;
+  display: flex;
+}
+
+/* icon headset */
+.container__three__span {
+  position: absolute;
+  left: 16px;
+  font-size: 15px;
+}
+
+/* p consultor online */
+.container__two__ p {
+  margin: 5px 0 5px 20px;
+  width: 140px;
+}
+
+/* logo footer */
+.container__three {
+  display: flex;
+  align-items: center;
+}
+
+.container__three > div {
+  display: grid;
+  margin-right: 25px;
+}
+.container__three__span{
+  margin-left: -10px;
+}
+
+@media (max-width: 628px) {
+  .container__three {
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .container__three {
+    margin: 1rem 0 1rem;
+  }
+
+  .container__three > div {
+    margin-right: 90px;
+  }
+}

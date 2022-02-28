@@ -1,10 +1,33 @@
+import React, { useState, useCallback } from "react";
+import "./styles/App.css";
+import { Header } from "./components/Header";
+import { Carousel } from "./components/Carousel";
+import { Content } from "./components/Content";
+import { Form } from "./components/Form";
+import { Footer } from "./components/Footer";
 
-import './styles/App.css';
+export default function App() {
+  const [addOneMoreToCart, setAddOneMoreToCart] = useState(0);
 
-function App() {
+  const saveToLocalStorage = (key, value) =>
+    localStorage.setItem(key, value + 1);
+
+  const handleWithState = () => {
+    setAddOneMoreToCart(addOneMoreToCart + 1);
+    saveToLocalStorage("key", addOneMoreToCart);
+  };
+
+  const handleWithValueLocalStorage = useCallback(() => {
+    return localStorage.getItem("key");
+  }, []);
+
   return (
-   <h1>asd</h1>
+    <>
+      <Header handleWithValueLocalStorage={handleWithValueLocalStorage} />
+      <Carousel />
+      <Content handleWithState={handleWithState} />
+      <Form />
+      <Footer />
+    </>
   );
 }
-
-export default App;
