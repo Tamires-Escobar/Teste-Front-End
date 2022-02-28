@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./style.module.css";
 
+/*  header img {seria um carousel. por falta de img foi feito img static} */
 export const Carousel = () => {
   return (
     <section className={styles.container}>

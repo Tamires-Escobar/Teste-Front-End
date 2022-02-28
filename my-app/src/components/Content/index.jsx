@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
 import styles from "./style.module.css";
 
+/* consulta api via fetch */
 export const Content = (props) => {
   const [listOfArrayProducts, setListOfArrayProducts] = useState([]);
 
@@ -11,6 +12,7 @@ export const Content = (props) => {
       .then((result) => setListOfArrayProducts(result));
   }, []);
 
+  
   const settings = {
     infinite: false,
     speed: 500,
