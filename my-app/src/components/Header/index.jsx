@@ -7,7 +7,9 @@ import { AiOutlineUser } from "react-icons/ai";
 import { GiShoppingCart } from "react-icons/gi";
 
 export const Header = (props) => {
-  const [noEffect, setNoEffect] = useState(false);
+  const [noEffect, setNoEffect] = useState(false);/* usestate usa o estado local de um componente de função
+                                                    pode ser passado o estado inicial p esta função e ela retorna
+                                                    uma variavel com o valor do estado atual. */
   const handleClick = () => setNoEffect((first) => !first);
 
   return (
@@ -28,22 +30,22 @@ export const Header = (props) => {
             placeholder="O que está procurando?"
           />
           <span className={styles.icon}>
-            <GrFormSearch />
+            <GrFormSearch /> {/* icon lupa */}
           </span>
         </div>
         <div className={styles.user}>
           <div className={styles.user__div}>
             <span>
-              <AiOutlineUser />
+              <AiOutlineUser /> {/* icon usuario */}
             </span>
             <p>Minha Conta</p>
           </div>
 
           <div className={styles.user__div__secondary}>
             <span>
-              <GiShoppingCart />
+              <GiShoppingCart /> {/* icon carrinho */}
             </span>
-            <span>{props.handleWithValueLocalStorage()}</span>
+            <span>{props.handleWithValueLocalStorage()}</span>{/* ahndlewithlocalestorage > lida com armazenamento local de um valor */}
           </div>
         </div>
       </nav>

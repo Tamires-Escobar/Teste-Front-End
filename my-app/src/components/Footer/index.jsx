@@ -27,12 +27,12 @@ export const Footer = () => {
         <div className={styles.container__two}>
           {/* button 1 */}
           <button className={styles.container__two__div}>
-            <span className={styles.container__two__span}><MdEmail/></span>
+            <span className={styles.container__two__span}><MdEmail/></span> {/* icon email */}
             <p>Entre em contato</p>
           </button>
 
            {/* button 2 */}
-          <button className={styles.container__two__div} mailto="mailto:escobartamires1@gmail.com">
+          <button className={styles.container__two__div}>
             <span className={styles.container__three__span}><MdHeadphones/></span>
             <p className={styles.container__two__p}>
               Fale com nosso consultor online

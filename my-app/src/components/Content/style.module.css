@@ -9,11 +9,13 @@
   max-width: 1248px;
   padding: 0px 40px;
 }
+
 .content__img:hover{
-  transform: scale(1.1);
-  border: solid 1px red;
-  border-bottom: hidden;
+  
+  transform: scale(1.0);
+  border: solid 2px red;
 }
+
 .content__div {
   text-align: center;
 }
@@ -69,8 +71,8 @@
 }
 
 .content__button {
-  padding: 7px;
-  width: 125px;
+  padding: 5px;
+  width: 120px;
   border-radius: 5px;
   margin-bottom: 14px;
 
@@ -92,6 +94,14 @@
 .content__div__info:hover .content__button {
   visibility: visible;
   opacity: 1;
+}
+
+.handleRating{
+  width: 100px;
+}
+span{
+  
+  height: 35px;
 }
 
 .content__listPrice {

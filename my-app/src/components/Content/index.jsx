@@ -1,13 +1,17 @@
 import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
 import styles from "./style.module.css";
+import {Rating} from 'react-simple-star-rating';
+
+
+
 
 /* consulta api via fetch */
 export const Content = (props) => {
-  const [listOfArrayProducts, setListOfArrayProducts] = useState([]);
+  const [listOfArrayProducts, setListOfArrayProducts] = useState([]); /* mostra set list */
 
   useEffect(() => {
-    fetch("https://corebiz-test.herokuapp.com/api/v1/products")
+    fetch("https://corebiz-test.herokuapp.com/api/v1/products")  /* consimundo api via fetch */
       .then((response) => response.json())
       .then((result) => setListOfArrayProducts(result));
   }, []);
@@ -45,13 +49,21 @@ export const Content = (props) => {
       },
     ],
   };
+  
+  const [rating, setRating] = useState(0)/* os dois const servem para criar as estrelas
+                                            de avaliação */
+  const handleRating = (rate) => {
+    setRating(rate)
+  }
+
+  
   return (
     <section className={styles.container}>
       <div className={styles.content}>
         <h1 className={styles.title}>Mais Vendidos</h1>
         <Slider className={styles.content__div} {...settings}>
-          {listOfArrayProducts?.map((item) => (
-            <div key={item.productId}>
+          {listOfArrayProducts?.map((item) => (/* map manipula itens de uma matriz (array) interando e acessando itens individuais */
+            <div key={item.productId}> {/* key  atribui aos itens da listOfarayproducts?.map.  */}
               <img
                 className={styles.content__img}
                 src={item.imageUrl}
@@ -61,16 +73,20 @@ export const Content = (props) => {
                 <h4 className={styles.content__div__title}>
                   {item.productName}
                 </h4>
-                <span>{item.stars}</span>
+                <span className={handleRating}>   
+                  <Rating className={handleRating} onClick={handleRating} ratingValue={item.stars}/>    
+                  {/* rating cria as stars e ratingValue puxando o item.stars da api */}
+                </span>
 
                 {item.listPrice ? (
                   <p className={styles.content__listPrice}>
-                    de R$ {item.listPrice}
+                    de {item.listPrice.toLocaleString('pt-BR', {style:"currency", currency: "BRL"})}
+                    
                   </p>
                 ) : (
                   <p className={styles.content__empty}></p>
                 )}
-                <p className={styles.content__price}>por R$ {item.price}</p>
+                <p className={styles.content__price}>por {item.price.toLocaleString('pt-BR', {style:"currency", currency:"BRL"})}</p>
 
                 {item.installments.map(
                   (subItem) =>
@@ -79,12 +95,12 @@ export const Content = (props) => {
                         className={styles.content__alternative__price}
                         key={subItem.quantity}
                       >
-                        ou em ${subItem.quantity}x de R$ ${subItem.value}`
+                        ou em {subItem.quantity}x de {subItem.value.toLocaleString('pt-BR', {style:"currency", currency: "BRL"})}`
                       </p>
                     )
                 )}
                 <button
-                  onClick={props.handleWithState}
+                  onClick={props.handleWithState} /* props >> propriedade, handlewithstate lidar com estado */
                   className={styles.content__button}
                 >
                   Comprar
@@ -97,3 +113,4 @@ export const Content = (props) => {
     </section>
   );
 };
+

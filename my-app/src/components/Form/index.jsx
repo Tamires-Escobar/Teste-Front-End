@@ -5,7 +5,7 @@ import styles from "./style.module.css";
 
 export const Form = () => {
   /* define  name, email, error */
-  const [name, setName] = useState();
+  const [name, setName] = useState(); 
   const [email, setEmail] = useState();
   const [error, setError] = useState(null);
 
@@ -19,10 +19,10 @@ export const Form = () => {
 
     /* validação de name */
   const validateName = (value) => {
-    const regex = /[a-z]{3}/; /* puxa alfabato e exige ao menos 3 caracteres */
+    const Regex = /[a-z]{3}/; /* puxa alfabato e exige ao menos 3 caracteres */
     if (value.length === "") {
       setError("Preencha seu nome");
-    } else if (!regex.test(value)) {
+    } else if (!Regex.test(value)) {
       setError("Nome incorreto");
     } else {
       setError(null);
@@ -48,7 +48,7 @@ export const Form = () => {
           Participe de nossas news com promoções e novidades!
         </h1>
         <div className={styles.mobile}>
-          <input
+          <input /* input name */
             className={styles.input}
             type="text"
             placeholder="Digite seu nome"
@@ -56,7 +56,7 @@ export const Form = () => {
             onChange={handleWithValueName}
           />
           {error && <p> {error}</p>}
-          <input
+          <input /* input email */
             className={styles.input}
             type="text"
             placeholder="Digite seu email"
